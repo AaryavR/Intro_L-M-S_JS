@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Random Number Generator</title>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Random Number Generator</h2>
+            <p id="randomNumbers"></p>
+            <p id="currentDate"></p>
+            <p id="roundedNumber"></p>
+            <button onclick="generateNumbers()">Generate</button>
+        </div>
+        
+        <script>
+            function generateNumbers() {
+                var numbers = [];
+                for (let i = 0; i < 5; i++) {
+                    numbers.push(Math.random().toFixed(2));
+                }
+                document.getElementById("randomNumbers").textContent = "Random Numbers: " + numbers.join(", ");
+                
+                var date = new Date();
+                document.getElementById("currentDate").textContent = "Current Date: " + date.toDateString();
+                
+                var randomNum = Math.random() * 100;
+                document.getElementById("roundedNumber").textContent = "Rounded Number: " + Math.round(randomNum);
+            }
+        </script>
+    </body>
+</html>
